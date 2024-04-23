@@ -1,0 +1,90 @@
+c neutron_Atomtex  energy=0.005 angle=0 He3+Ar 8+2 atm 
+1 3 -7.86 (1 -5 -2):(2 -5 -4 6) imp:n=1 imp:e=0 u=1 $ detector cells
+2 3 -7.86 3 -6 -10 imp:n=1 imp:e=0 u=1 $  
+3 14 -0.0042  2 -6 -3 imp:n=1 imp:e=0 u=1 $ gas; -0.0097 for He-3
+4 0 (7 -8 -9) imp:n=1 imp:e=1 fill=1 trcl=1 $ poly 
+5 4 -1.23 10 -6 -11 imp:n=1 imp:e=0 u=1 $ resin 
+6 3 -7.86 11 -6 -4 imp:n=1 imp:e=0 u=1 $  
+12 1 -0.95 #1 #2 #3 #5 #6 imp:n=1 imp:e=0 u=1 $ 
+99 0 77  imp:n=0 imp:e=0 $ vac sphere
+98 2 -0.0012 -77  #4 #7 #8 #9 #10 #11 imp:n=1 imp:e=1 $ vac sphere
+c for water
+7 5 -1 (-12 15 -14) #9 #10 #11 imp:n=1 imp:e=0 $ Water cask 
+8 3 -7.86 (-13 16 -7) #7 #9 #10 #11 imp:n=1 imp:e=0 $ steel cask
+11 5 -1 (23 -24) imp:n=1 imp:e=0 $ water cell #2
+c cf source
+9 6 -15.1 (-19 -22 21) imp:n=1 imp:e=0 $ cf cask
+10 3 -7.86 (-20 18 -17) #9 imp:n=1 imp:e=0 $ steel cask in cf
+
+c detector surfaces 
+1 py 0
+2 py 0.035
+3 py 10.535
+4 py 12.835
+5 cy 0.9
+6 cy 0.865
+7 py -5.
+8 py 15.
+9 cy 18
+10 py 10.585
+11 py 12.785
+77 so 199 $ vacuum sphere
+c now water
+12 cy 20
+13 cy 21
+14 py -6.
+15 py -126.
+16 py -127.
+c water cell
+23 py -59.25
+24 sy -66.3 8
+c Cf source
+17 py -65.25
+18 py -66.75
+19 cy 0.17
+20 cy 0.35
+21 py -66.45
+22 py -66.15
+
+MODE N E
+sdef X=d1 Y=d2 Z=d3 erg=d4 cel=9
+Si1  -0.17 0.17
+Sp1  0 1
+Si2  -66.45 -66.15
+Sp2 0 1
+Si3  -0.17 0.17
+Sp3  0 1
+sp4 -3 1.025 2.926
+F2:n 22
+E2 0.0 1e-6 1e-4 1e-3 1e-2 .1 19I 10
+SD2 27.2376
+F12:n 17
+E12 0.0 1e-6 1e-4 1e-3 1e-2 .1 19I 10
+SD12 115.45353
+F22:n 24
+E22 0.0 1e-6 1e-4 1e-3 1e-2 .1 19I 10
+SD22 1385.44
+f4:n 3  
+e4 0.0 20.
+fm4 -1.0 14 103 
+f1:n 8
+f6:n 8
+f11:n 3
+f16:n 3
+c Translations
+Tr1 -5 13.001 0 0 -1 0 1 0 0 0 0 1 1
+c material specification
+m2 1001 -0.00064 6012 -0.00014 7014 -0.75086&
+   8016 -0.24836 $ air 8016 -0.23555 
+m1 1001 -.07692 6012 -.92308 $ polyetilen (C2H2)n rho=0.95 
+m3  26000 1.0   $ Fe rho=7.86 
+m4  1001 -0.057 6012 -0.543 17000 -0.434 $ rubber rho=1.23 
+m14 2003 -0.231 18000 -0.769 $ He3+Ar gas 8+2 atm rho=0.0042 
+c m14 2003 1 $He3 gas 8atm rho=0.00097 
+m5 1001 2 8016 1 $H2O
+m6 98252 1 $ Cf
+NPS 1E7
+lost 20  10
+ptrac file=asc event=src type=n max=3000 write=pos
+prdmp 2j -1 $20000 20000 
+print 10 40 50 110 161 170

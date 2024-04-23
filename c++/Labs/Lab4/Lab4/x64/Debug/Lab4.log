@@ -1,0 +1,5 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(467,5): warning MSB8028: промежуточный каталог (x64\Debug\) содержит файлы, которые используются совместно с другим проектом (Lab4.vcxproj).  Это может привести к ошибкам очистки и перестроения.
+  MyForm.cpp
+D:\WeAreStudingVSc++\LABS\Lab4\Lab4\MyForm.cpp(5,33): warning C4829: Возможно, неправильные параметры функции main. Рекомендуемый вариант - "int main(Platform::Array<Platform::String^>^ argv)"
+  MyForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
+  Lab4.vcxproj -> D:\WeAreStudingVSc++\LABS\Lab4\x64\Debug\Lab6.exe

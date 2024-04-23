@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>468</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>TaskManager</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGroupBox" name="gbMainLogged">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>801</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+    </property>
+    <widget class="QPushButton" name="newTaskBtn">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>10</y>
+       <width>80</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>new</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="logOutBtn">
+     <property name="geometry">
+      <rect>
+       <x>730</x>
+       <y>10</y>
+       <width>31</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset theme="preferences-desktop-accessibility"/>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>10</y>
+       <width>341</width>
+       <height>26</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="personNameLbl">
+     <property name="geometry">
+      <rect>
+       <x>530</x>
+       <y>10</y>
+       <width>171</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="comboBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>79</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>Ещё что-то</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Закрыть</string>
+      </property>
+      <property name="icon">
+       <iconset theme="document-send"/>
+      </property>
+     </item>
+    </widget>
+    <widget class="QPushButton" name="quit1Btn">
+     <property name="geometry">
+      <rect>
+       <x>769</x>
+       <y>10</y>
+       <width>31</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../icons/quir.jpg</normaloff>../icons/quir.jpg</iconset>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="gbMainUnLogged">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>801</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QPushButton" name="authBtn">
+     <property name="geometry">
+      <rect>
+       <x>730</x>
+       <y>10</y>
+       <width>31</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../icons/login_drak.png</normaloff>../icons/login_drak.png</iconset>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="comboBox_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>79</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>Ещё что-то</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Закрыть</string>
+      </property>
+      <property name="icon">
+       <iconset theme="document-send"/>
+      </property>
+     </item>
+    </widget>
+    <widget class="QPushButton" name="quit2Btn">
+     <property name="geometry">
+      <rect>
+       <x>769</x>
+       <y>10</y>
+       <width>31</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../icons/quir.jpg</normaloff>../icons/quir.jpg</iconset>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="registerBtn">
+     <property name="geometry">
+      <rect>
+       <x>690</x>
+       <y>10</y>
+       <width>31</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../icons/reg_dark.png</normaloff>../icons/reg_dark.png</iconset>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="taskFrame">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>60</y>
+      <width>791</width>
+      <height>371</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QGroupBox" name="gbToDo">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>60</y>
+       <width>191</width>
+       <height>251</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>To Do</string>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="gbDoing">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>60</y>
+       <width>211</width>
+       <height>251</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Doing</string>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="gbDone">
+     <property name="geometry">
+      <rect>
+       <x>560</x>
+       <y>60</y>
+       <width>211</width>
+       <height>251</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Done</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>BottomToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="logIn"/>
+  </widget>
+  <action name="quit">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../icons/quir.jpg</normaloff>../icons/quir.jpg</iconset>
+   </property>
+   <property name="text">
+    <string>Выключить</string>
+   </property>
+   <property name="toolTip">
+    <string>Завершитьработу</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::QuitRole</enum>
+   </property>
+  </action>
+  <action name="logOut">
+   <property name="icon">
+    <iconset>
+     <normaloff>../icons/logOut.png</normaloff>../icons/logOut.png</iconset>
+   </property>
+   <property name="text">
+    <string>Выйти</string>
+   </property>
+   <property name="toolTip">
+    <string>Выйти с устройства</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::NoRole</enum>
+   </property>
+  </action>
+  <action name="logIn">
+   <property name="icon">
+    <iconset>
+     <normaloff>../icons/login_drak.png</normaloff>../icons/login_drak.png</iconset>
+   </property>
+   <property name="text">
+    <string>Войти</string>
+   </property>
+   <property name="toolTip">
+    <string>Авторизация</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::NoRole</enum>
+   </property>
+  </action>
+  <action name="register'">
+   <property name="icon">
+    <iconset>
+     <normaloff>../icons/reg_dark.png</normaloff>../icons/reg_dark.png</iconset>
+   </property>
+   <property name="text">
+    <string>Регистрация</string>
+   </property>
+   <property name="toolTip">
+    <string>Регистрация нового пользователя</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::NoRole</enum>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

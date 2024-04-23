@@ -1,0 +1,62 @@
+  ThrGame.ImagesForProject.resources - Embedded, ContainedInManifestFile, 
+  ThrGame.MyForm.resources - Embedded, ContainedInManifestFile, 
+  ThrGame.Options.resources - Embedded, ContainedInManifestFile, 
+  ThrGame.PetName.resources - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v4.0.30319
+Assembly ThrGame, Version=0.0.*, Culture=Инвариантный язык (Инвариантная страна): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class ThrGame.Number: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.Label l_value : Public
+    System.Windows.Forms.Button b_start : Public
+    System.Windows.Forms.Label l_n_pobed : Public
+Class ThrGame.Options: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.TrackBar trackBar1 : Public
+    System.Windows.Forms.TextBox textBox1 : Public
+    System.Windows.Forms.TextBox textBox2 : Public
+    System.Windows.Forms.TextBox textBox3 : Public
+    System.Windows.Forms.TextBox textBox4 : Public
+    System.Windows.Forms.TextBox textBox5 : Public
+    System.Windows.Forms.TextBox textBox6 : Public
+    System.Windows.Forms.TextBox textBox7 : Public
+    System.Windows.Forms.TextBox textBox8 : Public
+    System.Windows.Forms.TextBox textBox9 : Public
+    System.Windows.Forms.TextBox textBox10 : Public
+    System.Windows.Forms.TextBox textBox11 : Public
+    System.Windows.Forms.TextBox textBox12 : Public
+    System.Windows.Forms.RadioButton radioButton1 : Public
+    System.Windows.Forms.RadioButton radioButton2 : Public
+    System.Windows.Forms.CheckBox cb_gamestop : Public
+    System.Windows.Forms.CheckBox cb_onsave : Public
+Class ThrGame.PetName: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.Label label1 : Public
+    System.Windows.Forms.TextBox textBox1 : Public
+Class ThrGame.MyForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.Timer MainTimer : Public
+  Methods:
+    b_start_Click(Object, EventArgs): PrivateScope, Public, HideBySig
+    ShowAction(String, Int32 IsConst): PrivateScope, Public, HideBySig
+    ShowAction(String): PrivateScope, Public, HideBySig

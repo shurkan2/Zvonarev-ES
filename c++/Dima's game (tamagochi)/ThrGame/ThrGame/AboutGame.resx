@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="label1.Text" xml:space="preserve">
+    <value>1) Голод. Параметр, показываеющий сытость вашенго питомца. Если питимоц голоден (30% и менее) - он не сможет уснуть. Поднимается покупкой еды. При поедании увеличивается нужда питомца. Если еда восстанавливает много голода, а питомец не очень голоден, то лишняя еда улетучится в небытие, не записавшись в насыщение
+2) Жажда . Параметр, уменьшающийся быстрее всего в игре. У питомца всегда есть запас бесплатной воды. Всё остальное требует денег. В отличие от еды, обезвоженный питомец может заснуть и умереть во сне от жажды. Будьте осторожны!. 
+3)Сон. Механика сна проста - когда горит лампа - сейчас день и петомец спать не хочет. он постепенно устаёт, и со временем будет нуждаться во сне. Если питомец хочет спать, он не станет играть со своим мастером. Если лампа выключена, петомец будет спать. при этом его параметры "Скука" и "Любовь" не будут уменьшаться.
+4)Развлечения. Петомец будет со временем терять этот параметр, вследствии чего его надо развлекать. Пока что реализовано лишь две игры:
+ 4.1) Угадай карты: нужно за 5 попыток угадать как можно больше карт, лежащих рубашками вверх. У каждой карты есть лишь 1 пара. Если попытка угадывания была удачной, то счётчик попыток не увеличивается. На всю игру отводится определённое количество времени. С увеличением сложности растёт количество карт.
+ 4.2) Поймать мышку: нужно лишь ловить мешей. На слабых компьютерах возможны сильные лаги (неизвестно чем вызваны, на win32 написано приложение). В среднем умелому игроку (Звонарёв Дима - оытный игрок в шутеры) удавалось поймать 35 мышек. С каждой пойманной на дорожке мышкой скорость следующей выбегающей мышки увеличивается.
+от количества времени, проведённого в игре, зависит количество развлечения, которое кот получит. Нелогично, но переделывать мне лень
+5) Туалет. Если уровень нужды питомца 85% и ниже, то питомца можно выпустить на улицу. Спустя время он вернётся и его запас нужды откатиться до максимального значения
+6) Любовь. Любите своих питомцев. Что ещё им модет быть нужно.... в этой жизни{}. 
+
+</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Можно сохранить своего питомца, и в последующем вернуться к нему. На даннный момент в настройках можно регулировать автосохранение питомца при выходе из игры. Автосохранения со временем нет.
+Можно так же загружать петомцев, но для этого надо либо помнить их имя, либо полазить по папкам:   &lt;GameFolder&gt;/SavedPets/. Возможно, если вспомню, реализую быстрый доступ к сохранённым петам
+</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Разработчики: 
+1) Анастасия Довгалюк: Продюссер, консультант, (художник)
+2) Дмитрий Звонарёв: Продюссер. альфа-тестеровщик.
+3) Владислав Погорельский: кодировщик, тестировщик
+4) Владислав Януть: консультант, тестировщик
+5) Звонарёв Эдик: ответственный за все баги игры
+6) Денис Николаевич: критик
+
+</value>
+  </data>
+</root>

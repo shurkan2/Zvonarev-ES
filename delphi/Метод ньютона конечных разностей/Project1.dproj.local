@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.921,=C:\Users\Admin\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.357,C:\Users\Admin\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\Admin\Desktop\Оле лабы\Лаба2\Ньютон конечных разностей\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.154,=C:\Users\Admin\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.357,C:\Users\Admin\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\Admin\Desktop\Оле лабы\Лаба2\Ньютон конечных разностей\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.223,C:\Users\Admin\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\Admin\Desktop\Оле лабы\Лаба2\Ньютон конечных разностей\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,4 @@
+﻿  Solving(Gauss).cpp
+D:\WeAreStudingVSc++\LABS\lab1\lab1_KSR(Gauss)\KSR_1_lab\KSR_1_lab\Solving(Gauss).cpp(43,19): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+  MyForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
+  KSR_1_lab.vcxproj -> D:\WeAreStudingVSc++\LABS\lab1\lab1_KSR(Gauss)\KSR_1_lab\Debug\KSR_1_lab.exe
