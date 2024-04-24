@@ -43,7 +43,8 @@ class dataBase():
         return len(result) > 0
 
     def getTasksByUser(self, login):
-        return self.get('''SELECT * FROM tasks WHERE login=(?)''', (login))
+        return self.get('''SELECT * FROM tasks WHERE user_id=(?)''', (login))
+
     
     def updateCategory(self, login, category):
         self.execute('''UPDATE users SET category=(?) WHERE login=(?)''', category, login)
@@ -59,6 +60,10 @@ class dataBase():
     
     def updateStates(self, login, states):
         self.execute('''UPDATE users SET states=(?) WHERE login=(?)''', states, login)
+    
+    def updateTasksStates(self, login, tasksList):
+        for task in tasksList:
+            self.execute('''UPDATE tasks SET status=(?) WHERE id=(?) AND user_id=(?)''', task[7], task[0], login)
 
     def __del__(self):
         self.database.close()

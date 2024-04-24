@@ -5,7 +5,7 @@ from PyQt6.QtSql import *
 import os
 
 from user import user
-from tasksProcessor import calcDeadlineStatus
+from tasksProcessor import calcDeadlineStatus, updDeadlineStatus
 
 
 class UI(QMainWindow):
@@ -42,7 +42,7 @@ class UI(QMainWindow):
         
         ##############################              
         self.tmpBtn = self.findChild(QPushButton, 'tmpBtn')
-        self.tmpBtn.clicked.connect(self.newTaskButtonClicked)
+        self.tmpBtn.clicked.connect(self.updtasksBtnClckd)
         
         #init user
         self.user = user('', '')
@@ -55,7 +55,7 @@ class UI(QMainWindow):
         self.user = user('111', '111')
         self.user.checkAuth()
         self.authorized()
-        self.newTaskButtonClicked()
+        self.updtasksBtnClckd()
         pass
     
     def registerButtonClicked(self):
@@ -121,7 +121,18 @@ class UI(QMainWindow):
         self.gbMainLogged.setVisible(False)
         self.taskFrame.setVisible(False)
         
+    
+    def updtasksBtnClckd(self):
+        if self.user.isLogged:
+            self.user.updateTaskStatus(
+                updDeadlineStatus(self.user.getTasks(), 
+                                QDateTime.currentDateTime().toString('yyyy-MM-dd-hh-mm-ss')
+                                )
+                )
+        self.showTasks()
+        
     def showTasks(self):
+        return
         taskBox = QToolBox(self.taskFrame)
         taskBox.setObjectName("taskBox")
 
@@ -168,11 +179,8 @@ class UI(QMainWindow):
         newTaskWindow = QDialog()
         uic.loadUi(self.pathOfFile('newTask.ui'), newTaskWindow)
         
-        categories = self.user.category.split('#')
-        states = self.user.states.split('#')
-        newTaskWindow.findChild(QComboBox, 'cbCategory').addItems(categories)
-        newTaskWindow.findChild(QComboBox, 'cbStatus').addItems(states)
-        
+        newTaskWindow.findChild(QComboBox, 'cbCategory').addItems(self.user.category.split('#'))
+        newTaskWindow.findChild(QComboBox, 'cbStatus').addItems(self.user.states.split('#'))
         newTaskWindow.findChild(QDateEdit, 'deadlineDateEdit').setDate(QDate.currentDate())
         newTaskWindow.findChild(QTimeEdit, 'deadlineTimeEdit').setTime(QTime.currentTime())
         

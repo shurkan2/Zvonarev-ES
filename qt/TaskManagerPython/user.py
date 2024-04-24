@@ -56,4 +56,7 @@ class user:
         self.db.updateStates(self.login, self.states)
 
     def getTasks(self):
-        pass
+        return self.db.getTasksByUser(self.login)
+    
+    def updateTaskStatus(self, taskList):
+        self.db.updateTasksStates(self.login, taskList)
