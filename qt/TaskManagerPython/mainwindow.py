@@ -5,6 +5,7 @@ from PyQt6.QtSql import *
 import os
 
 from user import user
+from tasksProcessor import calcDeadlineStatus
 
 
 class UI(QMainWindow):
@@ -39,6 +40,10 @@ class UI(QMainWindow):
         self.gbDone = self.taskFrame.findChild(QGroupBox, 'gbDone')
         
         
+        ##############################              
+        self.tmpBtn = self.findChild(QPushButton, 'tmpBtn')
+        self.tmpBtn.clicked.connect(self.newTaskButtonClicked)
+        
         #init user
         self.user = user('', '')
         
@@ -46,6 +51,13 @@ class UI(QMainWindow):
         self.loggedOut() # To hide logoutBtn
         self.show()
 
+    def tmpBtnclicked(self):
+        self.user = user('111', '111')
+        self.user.checkAuth()
+        self.authorized()
+        self.newTaskButtonClicked()
+        pass
+    
     def registerButtonClicked(self):
     
         
@@ -139,18 +151,16 @@ class UI(QMainWindow):
 
     def newTaskButtonClicked(self):
         def newTaskWindowAccepted():
-            deadlineStatusList = ["Не скоро", "Скоро", "Горит", "Просрочено"]
             newTaskWindow.setEnabled(False)
             task = newTaskWindow.findChild(QLineEdit, 'taskLEdit').text()
             task_class = newTaskWindow.findChild(QComboBox, 'cbCategory').currentText()
             status = newTaskWindow.findChild(QComboBox, 'cbStatus').currentText()
             description = newTaskWindow.findChild(QTextEdit, 'descTEdit').toPlainText()
             deadline = newTaskWindow.findChild(QDateEdit, 'deadlineDateEdit').date().toString('yyyy-MM-dd')
+            deadlineTime = newTaskWindow.findChild(QTimeEdit, 'deadlineTimeEdit').time().toString('hh-mm-ss')
             
-            current_date = QDate.currentDate().toPyDate()
-            deadline_date = newTaskWindow.findChild(QDateEdit, 'deadlineDateEdit').date().toPyDate()
-
-            days_to_deadline = (deadline_date - current_date).days
+            current_date = QDateTime.currentDateTime().toString('yyyy-MM-dd-hh-mm-ss')
+            deadline_status = calcDeadlineStatus("-".join([deadline, deadlineTime]), current_date)
             
             self.user.addTask(task, task_class, description, status, deadline, deadline_status)
             newTaskWindow.close()
@@ -163,12 +173,8 @@ class UI(QMainWindow):
         newTaskWindow.findChild(QComboBox, 'cbCategory').addItems(categories)
         newTaskWindow.findChild(QComboBox, 'cbStatus').addItems(states)
         
-        current_date = QDate.currentDate()
-        print(current_date.toPyDate())
-        print(current_date.toPyDate().day)
-        '''
-        Надо реализовать показ тек.даты?
-        '''
+        newTaskWindow.findChild(QDateEdit, 'deadlineDateEdit').setDate(QDate.currentDate())
+        newTaskWindow.findChild(QTimeEdit, 'deadlineTimeEdit').setTime(QTime.currentTime())
         
         newTaskWindow.accepted.connect(newTaskWindowAccepted)
         newTaskWindow.exec()
