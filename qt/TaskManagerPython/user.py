@@ -5,30 +5,24 @@ class user:
         self.login = login
         self.password = password
         self.db = connect.dataBase()
+        self.states = "#".join(["ToDo", "Doing", "Done"])
+        self.category = "#".join(["Work", "Personal", "Home"])
         self.isLogged = False
     
-    def addTask(self, task, description, status, deadline_status, task_class, deadline):
+    def addTask(self, task, task_class, description, status, deadline, deadline_status):
         db = connect.dataBase()
-        db.execute('''INSERT INTO tasks(user_id, task, description, status, deadline_status, task_class, deadline) VALUES (?, ?, ?, ?, ?, ?, ?)''', 
-                   self.login, task, description, status, deadline_status, task_class, deadline)
+        db.execute('''INSERT INTO tasks(user_id, task, task_class, description, status, deadline, deadline_status) VALUES (?, ?, ?, ?, ?, ?, ?)''', 
+                self.login, task, task_class, description, status, deadline, deadline_status)
+        print("Added task: ", task)
         pass
     
     def checkAuth(self):
-        """
-        Checks if the user's login and password are valid.
-        Sets the 'isLogged' instance variable to True if successful.
-        
-        Returns:
-            bool: True if login and password are valid, False otherwise.
-        """
-        # Check if the user's login and password are valid
         if self.db.checkUser(self.login, self.password):
-            # If valid, set the 'isLogged' variable to True
             self.isLogged = True
+            self.category = self.db.getCategory(self.login)
             return True
-        # If not valid, return False
-        return False
 
+        return False
 
     def validate(self,password2):
         #validateLogin():
@@ -47,10 +41,13 @@ class user:
         if self.password != password2:
             return "Error: Passwords don't match!"
 
-        self.db.addUser(self.login, self.password)
+        self.db.addUser(self.login, self.password, self.states, self.category)
         self.isLogged = True
         return "nope"
 
+    def updateCategory(self, category):
+        self.category = category
+        self.db.updateCategory(self.login, self.category)
 
     def getTasks(self):
         pass

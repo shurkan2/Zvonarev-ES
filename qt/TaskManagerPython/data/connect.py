@@ -14,8 +14,9 @@ class dataBase():
         self.cursor.execute(query, args)
         self.database.commit()
     
-    def addUser(self, login, password):
-        self.execute('''INSERT INTO users(login, password) VALUES (?, ?)''', login, password)
+    def addUser(self, login, password, states, category):
+        self.execute('''INSERT INTO users(login, password, states, category) VALUES (?, ?, ?, ?)''',
+                     login, password, states, category)
         
     
     def get(self, query, *args):
@@ -45,6 +46,12 @@ class dataBase():
     
     def getTask(self, task_id):
         return self.get('''SELECT * FROM tasks WHERE id=(?)''', (task_id))
+    
+    def updateCategory(self, user_id, category):
+        self.execute('''UPDATE users SET category=(?) WHERE id=(?)''', category, user_id)
+        
+    def getCategory(self, user_id):
+        return self.get('''SELECT category FROM users WHERE id=(?)''', (user_id))
 
     def __del__(self):
         self.database.close()

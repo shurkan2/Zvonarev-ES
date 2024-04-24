@@ -138,6 +138,43 @@ class UI(QMainWindow):
 
 
     def newTaskButtonClicked(self):
+        def newTaskWindowAccepted():
+            newTaskWindow.setEnabled(False)
+            task = newTaskWindow.findChild(QLineEdit, 'taskLEdit').text()
+            task_class = newTaskWindow.findChild(QComboBox, 'cbCategory').currentText()
+            status = newTaskWindow.findChild(QComboBox, 'cbStatus').currentText()
+            description = newTaskWindow.findChild(QTextEdit, 'descTEdit').toPlainText()
+            deadline = newTaskWindow.findChild(QDateEdit, 'deadlineDateEdit').date().toString('yyyy-MM-dd')
+            
+            current_date = QDate.currentDate().toPyDate()
+            deadline_date = newTaskWindow.findChild(QDateEdit, 'deadlineDateEdit').date().toPyDate()
+
+            days_to_deadline = (deadline_date - current_date).days
+
+            if days_to_deadline > 6 and days_to_deadline <= 14:
+                deadline_status = 'Скоро'
+            elif days_to_deadline > 0 and days_to_deadline <= 1:
+                deadline_status = 'Горит'
+            elif days_to_deadline < 0:
+                deadline_status = 'Просрочено'
+            else:
+                deadline_status = 'Не скоро'
+            
+            
+            self.user.addTask(task, task_class, description, status, deadline, deadline_status)
+            newTaskWindow.close()
+        
+        newTaskWindow = QDialog()
+        uic.loadUi(self.pathOfFile('newTask.ui'), newTaskWindow)
+        
+        categories = self.user.category.split('#')
+        states = self.user.states.split('#')
+        newTaskWindow.findChild(QComboBox, 'cbCategory').addItems(categories)
+        newTaskWindow.findChild(QComboBox, 'cbStatus').addItems(states)
+        
+        newTaskWindow.accepted.connect(newTaskWindowAccepted)
+        newTaskWindow.exec()
+
         pass
     
     @staticmethod
