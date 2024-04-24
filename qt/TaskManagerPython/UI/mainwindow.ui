@@ -61,7 +61,8 @@
       <string/>
      </property>
      <property name="icon">
-      <iconset theme="preferences-desktop-accessibility"/>
+      <iconset theme="preferences-desktop-accessibility">
+       <normaloff>.</normaloff>.</iconset>
      </property>
     </widget>
     <widget class="QLineEdit" name="lineEdit">
@@ -86,6 +87,9 @@
      <property name="text">
       <string/>
      </property>
+     <property name="buddy">
+      <cstring>logOutBtn</cstring>
+     </property>
     </widget>
     <widget class="QComboBox" name="comboBox">
      <property name="geometry">
@@ -106,7 +110,8 @@
        <string>Закрыть</string>
       </property>
       <property name="icon">
-       <iconset theme="document-send"/>
+       <iconset theme="document-send">
+        <normaloff>.</normaloff>.</iconset>
       </property>
      </item>
     </widget>
@@ -176,7 +181,8 @@
        <string>Закрыть</string>
       </property>
       <property name="icon">
-       <iconset theme="document-send"/>
+       <iconset theme="document-send">
+        <normaloff>.</normaloff>.</iconset>
       </property>
      </item>
     </widget>
@@ -269,6 +275,19 @@
       <string>Done</string>
      </property>
     </widget>
+   </widget>
+   <widget class="QPushButton" name="tmpBtn">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>400</y>
+      <width>361</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Делает то же самое, что и new (ВРЕМЕННАЯ КНОПОЧКА)</string>
+    </property>
    </widget>
   </widget>
   <widget class="QToolBar" name="toolBar">

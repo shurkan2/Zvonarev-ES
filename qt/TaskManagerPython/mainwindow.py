@@ -139,6 +139,7 @@ class UI(QMainWindow):
 
     def newTaskButtonClicked(self):
         def newTaskWindowAccepted():
+            deadlineStatusList = ["Не скоро", "Скоро", "Горит", "Просрочено"]
             newTaskWindow.setEnabled(False)
             task = newTaskWindow.findChild(QLineEdit, 'taskLEdit').text()
             task_class = newTaskWindow.findChild(QComboBox, 'cbCategory').currentText()
@@ -150,16 +151,6 @@ class UI(QMainWindow):
             deadline_date = newTaskWindow.findChild(QDateEdit, 'deadlineDateEdit').date().toPyDate()
 
             days_to_deadline = (deadline_date - current_date).days
-
-            if days_to_deadline > 6 and days_to_deadline <= 14:
-                deadline_status = 'Скоро'
-            elif days_to_deadline > 0 and days_to_deadline <= 1:
-                deadline_status = 'Горит'
-            elif days_to_deadline < 0:
-                deadline_status = 'Просрочено'
-            else:
-                deadline_status = 'Не скоро'
-            
             
             self.user.addTask(task, task_class, description, status, deadline, deadline_status)
             newTaskWindow.close()
@@ -171,6 +162,13 @@ class UI(QMainWindow):
         states = self.user.states.split('#')
         newTaskWindow.findChild(QComboBox, 'cbCategory').addItems(categories)
         newTaskWindow.findChild(QComboBox, 'cbStatus').addItems(states)
+        
+        current_date = QDate.currentDate()
+        print(current_date.toPyDate())
+        print(current_date.toPyDate().day)
+        '''
+        Надо реализовать показ тек.даты?
+        '''
         
         newTaskWindow.accepted.connect(newTaskWindowAccepted)
         newTaskWindow.exec()

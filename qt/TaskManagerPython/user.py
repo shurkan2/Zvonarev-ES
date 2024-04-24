@@ -20,6 +20,8 @@ class user:
         if self.db.checkUser(self.login, self.password):
             self.isLogged = True
             self.category = self.db.getCategory(self.login)
+            self.states = self.db.getStates(self.login)
+            print("Logged in as: {},{}".format(self.login, self.category))
             return True
 
         return False
@@ -48,6 +50,10 @@ class user:
     def updateCategory(self, category):
         self.category = category
         self.db.updateCategory(self.login, self.category)
+        
+    def updateStates(self, states):
+        self.states = states
+        self.db.updateStates(self.login, self.states)
 
     def getTasks(self):
         pass

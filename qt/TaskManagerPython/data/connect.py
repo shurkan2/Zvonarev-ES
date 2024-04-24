@@ -19,10 +19,11 @@ class dataBase():
                      login, password, states, category)
         
     
-    def get(self, query, *args):
-        print("GET query: ",query, ", args:",args)
+    def get(self, query, *args):  
         self.cursor.execute(query, args)
-        return self.cursor.fetchall()
+        tmp = self.cursor.fetchall()
+        print("GET query: ",query, ", args:",args, ",\n\t result:",tmp)
+        return tmp
     
 
     def close(self):
@@ -41,17 +42,23 @@ class dataBase():
         result = self.get('''SELECT * FROM users WHERE login=(?) AND password=(?)''', login, password)
         return len(result) > 0
 
-    def getTasksByUser(self, user_id):
-        return self.get('''SELECT * FROM tasks WHERE user_id=(?)''', (user_id))
+    def getTasksByUser(self, login):
+        return self.get('''SELECT * FROM tasks WHERE login=(?)''', (login))
     
-    def getTask(self, task_id):
-        return self.get('''SELECT * FROM tasks WHERE id=(?)''', (task_id))
-    
-    def updateCategory(self, user_id, category):
-        self.execute('''UPDATE users SET category=(?) WHERE id=(?)''', category, user_id)
+    def updateCategory(self, login, category):
+        self.execute('''UPDATE users SET category=(?) WHERE login=(?)''', category, login)
         
-    def getCategory(self, user_id):
-        return self.get('''SELECT category FROM users WHERE id=(?)''', (user_id))
+    def getCategory(self, login):
+        res =  self.get('''SELECT category FROM users WHERE login=(?)''', (login))
+        return res[0][0]
+    
+    def getStates(self, login):
+        res =  self.get('''SELECT states FROM users WHERE login=(?)''', (login))
+        return res[0][0]
+    
+    
+    def updateStates(self, login, states):
+        self.execute('''UPDATE users SET states=(?) WHERE login=(?)''', states, login)
 
     def __del__(self):
         self.database.close()
